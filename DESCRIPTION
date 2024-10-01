@@ -3,7 +3,7 @@ Type: Package
 Title: Automatically Write JAGS Code for Hierarchical Bayesian Models on Trees
 Version: 1.0.0
 Authors@R: person("Mallory J", "Flynn", email = "mallory.flynn@stat.ubc.ca", role = c("cre", "aut"))
-Maintainer: The package maintainer <mallory.flynn@stat.ubc.ca>
+Maintainer: Mallory J Flynn <mallory.flynn@stat.ubc.ca>
 Description: When relationships between sources of data can be represented 
     by a tree, the generation of appropriate MCMC modelling code to be used 
     with JAGS to run a Bayesian hierarchical model can be automatically generated 
@@ -21,6 +21,7 @@ Imports:
     stats,
     R2jags,
     tidyverse,
+    DiagrammeR,
     AutoWMM
 Suggests: 
     knitr,
