@@ -7,7 +7,7 @@ data.JAGS <- create_data()
 Sys.setenv("RGL_USE_NULL" = TRUE)
 
 # Test creation of tree data type
-test_that("makeJAGStree function does not return object", {
+test_that("makeJAGStree function does not return object in environment", {
     expect_type(with_mock(makeJAGStree(data.JAGS, filename = "JAGStest.txt")), "NULL")
 })
 
