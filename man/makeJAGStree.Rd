@@ -26,8 +26,6 @@ Generates a .mod or .txt file with JAGS code for Bayesian
 \examples{
 \dontrun{
   # optional use of the AutoWMM package to show tree structure
-  library(AutoWMM)
-  library(gtools)
   Sys.setenv("RGL_USE_NULL" = TRUE)
   tree <- makeTree(data1)
   drawTree(tree)
@@ -40,9 +38,6 @@ Generates a .mod or .txt file with JAGS code for Bayesian
   makeJAGStree(data2, filename="data2_JAGSscript.mod", prior = "uniform")
 
   # third example, showing optional execution with MCMC in R
-  library(R2jags)
-  library(mcmcplots)
-
   makeJAGStree(data3, filename="multiScript.mod")
   makeJAGStree(data3, filename="multiScript.txt")
 
@@ -80,7 +75,7 @@ Generates a .mod or .txt file with JAGS code for Bayesian
                 inits = mod.initial.cont,
                 parameters.to.save = mod.params,
                 n.chains = numchains,
-                n.iter = 50000, n.burnin = 20000,
+                n.iter = 500, n.burnin = 200,
                 model.file = "multiScript.mod")
   print(mod.fit)
 

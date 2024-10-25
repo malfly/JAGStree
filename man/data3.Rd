@@ -21,7 +21,7 @@ data(data3)
 }
 \description{
 Small, artificially generated toy data set to demonstrate package functionality
-with a multinomial distrbution among node branching
+with a multinomial distribution among node branching
 }
 \examples{
 data(data3)

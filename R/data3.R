@@ -1,7 +1,7 @@
 #' Simple Tree Data 3
 #'
 #' Small, artificially generated toy data set to demonstrate package functionality
-#' with a multinomial distrbution among node branching
+#' with a multinomial distribution among node branching
 #'
 #' @docType data
 #'
