@@ -13,33 +13,33 @@ makeJAGStree(data, prior = "lognormal", filename = "JAGSmodel.mod")
 node population size; can be set to "lognormal" (default) or "uniform"}
 
 \item{filename}{A string containing the file name for resulting output
-JAGS model file; must end in .mod or .txt}
+'JAGS' model file; must end in .mod or .txt}
 }
 \value{
 A .mod or .txt file that contains code ready to run a Bayesian
- hierarchical model in JAGS based on the input tree-structured data
+ hierarchical model in 'JAGS' based on the input tree-structured data
 }
 \description{
-Generates a .mod or .txt file with JAGS code for Bayesian
+Generates a .mod or .txt file with 'JAGS' code for Bayesian
  hierarchical model on tree structured data
 }
 \examples{
-\dontrun{
+\donttest{
   # optional use of the AutoWMM package to show tree structure
   Sys.setenv("RGL_USE_NULL" = TRUE)
   tree <- makeTree(data1)
   drawTree(tree)
 
-  makeJAGStree(data1, filename="data1_JAGSscript.mod")
-  makeJAGStree(data1, filename="data1_JAGSscript.txt")
+  makeJAGStree(data1, filename=file.path(tempdir(), "data1_JAGSscript.mod"))
+  makeJAGStree(data1, filename=file.path(tempdir(), "data1_JAGSscript.txt"))
 
   # second example
-  makeJAGStree(data2, filename="data2_JAGSscript.mod")
-  makeJAGStree(data2, filename="data2_JAGSscript.mod", prior = "uniform")
+  makeJAGStree(data2, filename=file.path(tempdir(), "data2_JAGSscript.mod"))
+  makeJAGStree(data2, filename=file.path(tempdir(), "data2_JAGSscript.mod", prior = "uniform"))
 
   # third example, showing optional execution with MCMC in R
-  makeJAGStree(data3, filename="multiScript.mod")
-  makeJAGStree(data3, filename="multiScript.txt")
+  makeJAGStree(data3, filename=file.path(tempdir(), "multiScript.mod"))
+  makeJAGStree(data3, filename=file.path(tempdir(), "multiScript.txt"))
 
   mcmc.data <- list( "DE" = c(50, NA),
   "ABC" = c(NA, 500, NA),
