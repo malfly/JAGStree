@@ -1,5 +1,5 @@
 ---
-title: "JAGStree: R code that writes JAGS code"
+title: "JAGStree: R code that writes 'JAGS' code"
 output: rmarkdown::html_vignette
 bibliography: references.bib
 vignette: >
@@ -25,9 +25,9 @@ In many real-world applications, individuals or subjects may appear in multiple 
 This package is geared towards one subset of cases in which this general framework holds [@flynncomp].
 
 
-## Making a JAGS Model for Trees
+## Making a 'JAGS' Model for Trees
 
-In particular, we assume a number of related data sources exist with a known relational structure described by a tree. We also assume that nodes are associated with integer counts, which are multinomially distributed from the parent node, and branches are associated with a probability, which are Dirichlet distributed among a given sibling group.  Then, given a dataframe representing the tree structure, the `makeJAGStree()` function will generate appropriate MCMC modeling code to be used with JAGS, to run a Bayesian hierarchical model.
+In particular, we assume a number of related data sources exist with a known relational structure described by a tree. We also assume that nodes are associated with integer counts, which are multinomially distributed from the parent node, and branches are associated with a probability, which are Dirichlet distributed among a given sibling group.  Then, given a dataframe representing the tree structure, the `makeJAGStree()` function will generate appropriate MCMC modeling code to be used with 'JAGS', to run a Bayesian hierarchical model.
 
 The data frame must contain only two columns:
 
@@ -43,9 +43,9 @@ This `makeJAGStree` function has three parameters, two of which are required and
 
 - `prior`: This optional argument specifies the prior chosen for the root node population size.  The default is `lognormal`, while a `uniform` prior is also an option.
 
-- `filename`: This required argument is used to name the JAGS code output file.  It must end in `.mod` or `.txt` for correct functionality.
+- `filename`: This required argument is used to name the 'JAGS' code output file.  It must end in `.mod` or `.txt` for correct functionality.
 
-The Bayesian model implied behind this JAGS code is described at length elsewhere [@flynncomp], and is based on previously developed methodology [@flynnmethods].  A more extensive application to real-world data can be found in [@flynnapplication].
+The Bayesian model implied behind this 'JAGS' code is described at length elsewhere [@flynncomp], and is based on previously developed methodology [@flynnmethods].  A more extensive application to real-world data can be found in [@flynnapplication].
 
 ### Examples
 The functionality of the package is best demonstrated using simple trees.  The `AutoWMM` package can also be used to help render and visualize each of these trees:
@@ -67,10 +67,10 @@ tree <- makeTree(data)
 drawTree(tree)
 ```
 
-The function can be directly applied to the data, and will produce a `.mod` or `.txt` file, depending on which is specified.  A uniform prior can also be chosen for the root node, with parameters that will be specified when running JAGS:
+The function can be directly applied to the data, and will produce a `.mod` or `.txt` file, depending on which is specified.  A uniform prior can also be chosen for the root node, with parameters that will be specified when running 'JAGS':
 ```{r eval=FALSE }
-makeJAGStree(data1, filename="data1_JAGSscript.mod")
-makeJAGStree(data1, filename="data1_JAGSscript.txt", prior="uniform")
+makeJAGStree(data1, filename=file.path(tempdir(), "data1_JAGSscript.mod"))
+makeJAGStree(data1, filename=file.path(tempdir(), "data1_JAGSscript.txt", prior="uniform"))
 ```
 
 ## References
