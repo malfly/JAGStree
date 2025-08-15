@@ -3,7 +3,6 @@
 export(makeJAGStree)
 import(R2jags)
 import(data.tree)
-import(mcmcplots)
 import(stats)
 import(tidyverse)
 importFrom(AutoWMM,"makeTree")

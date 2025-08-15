@@ -62,9 +62,10 @@ data <- data.frame("from" = c("Z", "Z", "A", "A"),
 # optional use of the AutoWMM package to show tree structure
 Sys.setenv("RGL_USE_NULL" = TRUE)
 library(AutoWMM)
-library(DiagrammeR)
-tree <- makeTree(data)
-drawTree(tree)
+if (requireNamespace("AutoWMM", quietly = TRUE)) {
+  tree <- AutoWMM::makeTree(data1)
+  AutoWMM::drawTree(tree)
+}
 ```
 
 The function can be directly applied to the data, and will produce a `.mod` or `.txt` file, depending on which is specified.  A uniform prior can also be chosen for the root node, with parameters that will be specified when running 'JAGS':
