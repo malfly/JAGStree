@@ -1,6 +1,6 @@
 ## Submission summary
 
-This is the first submission of my package to CRAN.
+This is the third submission of my package to CRAN - the previous version was archived due to dependency on mcmcplots, so I have removed those dependencies.
 
 ## R CMD check results
 

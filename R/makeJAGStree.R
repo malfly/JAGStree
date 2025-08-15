@@ -63,12 +63,7 @@
 #'                 model.file = "multiScript.mod")
 #'   print(mod.fit)
 #'
-#'   ## plots using mcmcplots library
-#'   mod.fit.mcmc <- as.mcmc(mod.fit)
-#'   denplot(mod.fit.mcmc, parms = c("Z", "ABC[1]", "ABC[3]"))
-#'   denplot(mod.fit.mcmc, parms = c("pZ", "pA"))
-#'   traplot(mod.fit.mcmc, parms = c("Z", "ABC[1]", "ABC[3]"))
-#'   traplot(mod.fit.mcmc, parms = c("pZ", "pA"))
+#'
 #'   }
 #' @export
 #' @import tidyverse
@@ -76,7 +71,6 @@
 #' @import stats
 #' @importFrom AutoWMM "makeTree"
 #' @import R2jags
-#' @import mcmcplots
 #' @importFrom gtools "rdirichlet"
 #'
 #'
